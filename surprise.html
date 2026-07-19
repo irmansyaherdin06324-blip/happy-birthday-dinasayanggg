@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Dina ❤️</title>
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9ecf,#ffd9ec);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+max-width:700px;
+z-index:2;
+}
+
+h1{
+color:#ff2d7a;
+font-size:40px;
+}
+
+p{
+font-size:18px;
+color:#555;
+line-height:1.8;
+}
+
+button{
+margin-top:20px;
+padding:15px 35px;
+font-size:22px;
+border:none;
+border-radius:40px;
+background:#ff2d7a;
+color:white;
+cursor:pointer;
+}
+
+.heart{
+position:fixed;
+top:-20px;
+font-size:25px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+}
+}
+
+#love{
+display:none;
+margin-top:20px;
+font-size:35px;
+color:red;
+font-weight:bold;
+animation:zoom 1s infinite alternate;
+}
+
+@keyframes zoom{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.2);
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🎂 Happy Birthday Dina ❤️</h1>
+
+<p>
+
+Selamat ulang tahun yaa Dinaa 🤍
+
+Semoga di umur yang baru ini kamu selalu diberikan kesehatan, kebahagiaan, rezeki yang melimpah, dan semua impianmu bisa tercapai.
+
+Terima kasih sudah hadir dan menjadi bagian dari cerita indah dalam hidupku. Semoga hari ini menjadi awal dari banyak kebahagiaan yang akan datang.
+
+Semoga senyum kamu tidak pernah hilang, dan semoga aku masih diberi kesempatan untuk terus membuat kenangan indah bersamamu.
+
+Sekali lagi...
+
+Selamat Ulang Tahun yaa Dina ❤️
+
+</p>
+
+<button onclick="finish()">
+❤️ Selesai
+</button>
+
+<div id="love">
+I LOVE YOU ❤️
+</div>
+
+</div>
+
+<script>
+
+function finish(){
+
+document.getElementById("love").style.display="block";
+
+for(let i=0;i<120;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(3+Math.random()*4)+"s";
+
+heart.style.fontSize=(18+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},7000);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
