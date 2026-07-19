@@ -3,31 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Music For Dina ❤️</title>
+
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+.music-box{
+background:white;
+padding:25px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+text-align:center;
+}
+
+.music-box h1{
+color:#ff2d75;
+}
+
+.music-box p{
+font-size:18px;
+line-height:1.8;
+color:#555;
+}
+
+.btn2{
+background:#ff2d75;
+color:white;
+padding:15px 30px;
+border:none;
+border-radius:40px;
+font-size:18px;
+margin-top:20px;
+cursor:pointer;
+}
+
+.fade{
+animation:fade 2s infinite;
+}
+
+@keyframes fade{
+
+0%{opacity:.3;}
+
+50%{opacity:1;}
+
+100%{opacity:.3;}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>🎵 Lagu Untuk Dina ❤️</h1>
+<div class="music-box">
 
-<p class="subtitle">
+<h1>🎵 Music For Dina ❤️</h1>
+
+<h2 class="fade">🎧 You & I - One Direction</h2>
+
+<p>
+
 Lagu ini aku pilih khusus buat kamu.
-Semoga setiap nadanya selalu mengingatkan kita pada kenangan indah. ❤️
+
+Semoga setiap kali lagu ini diputar,
+
+kamu selalu ingat kalau ada seseorang
+
+yang membuat website ini dengan tulus
+
+khusus untukmu. ❤️
+
 </p>
 
-<audio controls autoplay loop style="width:100%;">
-    <source src="lagu.mp3" type="audio/mpeg">
-    Browser kamu tidak mendukung audio.
+<audio id="lagu">
+
+<source src="lagu.mp3" type="audio/mpeg">
+
 </audio>
+
+<button class="btn2" onclick="playMusic()">
+
+▶️ Putar Lagu
+
+</button>
 
 <br><br>
 
-<a href="video.html" class="btn">🎥 Lanjut ke Video</a>
+<p id="kata"></p>
+
+<br>
+
+<a href="video.html" class="btn">
+
+🎥 Lanjut ke Video
+
+</a>
 
 </div>
 
+</div>
+
+<script>
+
+const audio=document.getElementById("lagu");
+
+const btn=document.querySelector(".btn2");
+
+function playMusic(){
+
+if(audio.paused){
+
+audio.play();
+
+btn.innerHTML="⏸️ Pause Lagu";
+
+}else{
+
+audio.pause();
+
+btn.innerHTML="▶️ Putar Lagu";
+
+}
+
+}
+
+const teks=[
+
+"Aku...",
+
+"bersyukur...",
+
+"dipertemukan...",
+
+"dengan...",
+
+"kamu...",
+
+"❤️"
+
+];
+
+let i=0;
+
+setInterval(()=>{
+
+if(i<teks.length){
+
+document.getElementById("kata").innerHTML=teks[i];
+
+i++;
+
+}
+
+},2000);
+
+</script>
+
 </body>
+
 </html>
