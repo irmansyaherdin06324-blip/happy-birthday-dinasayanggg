@@ -5,6 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Memory Wall ❤️</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+.slide{
+display:none;
+animation:fade .6s;
+}
+
+.slide.active{
+display:block;
+}
+
+.slide img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+</style>
+
 </head>
 
 <body>
@@ -18,15 +41,48 @@ Every picture has a story,<br>
 and every story has you. ❤️
 </p>
 
-<img src="IMG_5557.JPG" style="width:100%;border-radius:20px;margin-bottom:20px;">
+<div class="slide active">
+<img src="IMG_5557.JPG">
+</div>
 
-<img src="IMG_5558.JPG" style="width:100%;border-radius:20px;margin-bottom:20px;">
+<div class="slide">
+<img src="IMG_5558.JPG">
+</div>
 
-<img src="IMG_5565.JPG" style="width:100%;border-radius:20px;margin-bottom:20px;">
+<div class="slide">
+<img src="IMG_5565.JPG">
+</div>
 
-<a href="music.html" class="btn">🎵 Lanjut</a>
+<br>
+
+<button class="btn" onclick="nextSlide()">
+➡️ Selanjutnya
+</button>
 
 </div>
+
+<script>
+
+let index=0;
+
+const slides=document.querySelectorAll(".slide");
+
+function nextSlide(){
+
+slides[index].classList.remove("active");
+
+index++;
+
+if(index>=slides.length){
+window.location.href="music.html";
+return;
+}
+
+slides[index].classList.add("active");
+
+}
+
+</script>
 
 </body>
 </html>
