@@ -1,25 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Dina ❤️</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<title>Hadiah Untuk Dina ❤️</title>
 
+<style>
+body{
+    margin:0;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    font-family:Arial,sans-serif;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+}
+.box{
+    background:rgba(255,255,255,.15);
+    padding:25px;
+    border-radius:20px;
+    backdrop-filter:blur(8px);
+}
+img{
+    width:220px;
+    border-radius:15px;
+    margin:20px 0;
+}
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    background:#fff;
+    color:#ff4d6d;
+    cursor:pointer;
+}
+</style>
+</head>
 <body>
 
-<div class="container">
-    <h1>🎂 Happy Birthday Dina ❤️</h1>
+<audio id="bgMusic" loop>
+    <source src="shape.mp3" type="audio/mpeg">
+</audio>
 
-    <p class="subtitle">
-        Selamat ulang tahun wanita cantikku.<br>
-        Aku punya hadiah kecil yang kubuat khusus untukmu. 🌹
-    </p>
+<div class="box">
+    <h1>🎁 Hadiah Ulang Tahun ❤️</h1>
+    <p>Scan QR di bawah ini untuk membuka hadiah spesial.</p>
 
-    <a href="letter.html" class="btn">💌 Buka Hadiah</a>
+    <img src="qr.png" alt="QR Hadiah">
+
+    <br>
+    <button onclick="mulai()">Aku Sudah Scan ❤️</button>
 </div>
+
+<script>
+function mulai(){
+    document.getElementById("bgMusic").play();
+    window.location.href="letter.html";
+}
+</script>
 
 </body>
 </html>
